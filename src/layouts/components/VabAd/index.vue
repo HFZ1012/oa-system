@@ -1,33 +1,14 @@
 <template>
   <div class="vab-ad">
-    <el-carousel v-if="adList" :autoplay="true" :interval="3000" direction="vertical" height="30px" indicator-position="none">
-      <el-carousel-item v-for="(item, index) in adList" :key="index">
-        <el-tag type="warning">Ad</el-tag>
-        <a :href="item.url" target="_blank">{{ item.title }}</a>
-      </el-carousel-item>
-    </el-carousel>
+    <div class="static-notice">
+      <span class="notice-icon">📢</span>
+      <span class="notice-text">中国科学院上海分院内网系统更新上线了！</span>
+    </div>
   </div>
 </template>
 <script>
-  import { getList } from '@/api/ad'
-
   export default {
     name: 'VabAd',
-    data() {
-      return {
-        nodeEnv: process.env.NODE_ENV,
-        adList: [],
-      }
-    },
-    created() {
-      this.fetchData()
-    },
-    methods: {
-      async fetchData() {
-        const { data } = await getList()
-        this.adList = data
-      },
-    },
   }
 </script>
 <style lang="scss" scoped>
@@ -37,10 +18,21 @@
     padding-left: $base-padding;
     margin-bottom: -20px;
     line-height: 30px;
-    cursor: pointer;
 
-    a {
-      color: #999;
+    .static-notice {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+
+      .notice-icon {
+        font-size: 16px;
+      }
+
+      .notice-text {
+        color: #666;
+        font-weight: 500;
+      }
     }
   }
 </style>

@@ -24,8 +24,23 @@ const registerRoutes = (app) => {
     return responseFake(route.url, route.type, route.response)
   })
   for (const mock of mocksForServer) {
-    app[mock.type](mock.url, mock.response)
-    mockLastIndex = app._router.stack.length
+    app.use((req, res, next) => {
+      // Mock Express properties
+      if (!res.status) res.status = (code) => { res.statusCode = code; return res; };
+      if (!res.json) res.json = (obj) => { res.setHeader('Content-Type', 'application/json'); res.end(JSON.stringify(obj)); };
+      if (!req.path) req.path = req.url.split('?')[0];
+
+      if (mock.url.test(req.path)) {
+        if (req.method.toLowerCase() === mock.type.toLowerCase() || mock.type === 'any') {
+          mock.response(req, res)
+        } else {
+          next()
+        }
+      } else {
+        next()
+      }
+    })
+    mockLastIndex = app.stack ? app.stack.length : (app._router ? app._router.stack.length : 0)
   }
   const mockRoutesLength = Object.keys(mocksForServer).length
   return {
@@ -83,7 +98,11 @@ module.exports = (app) => {
     .on('all', (event) => {
       if (event === 'change' || event === 'add') {
         try {
-          app._router.stack.splice(mockStartIndex, mockRoutesLength)
+          if (app.stack) {
+            app.stack.splice(mockStartIndex, mockRoutesLength)
+          } else if (app._router && app._router.stack) {
+            app._router.stack.splice(mockStartIndex, mockRoutesLength)
+          }
 
           Object.keys(require.cache).forEach((item) => {
             if (item.includes(mockDir)) {

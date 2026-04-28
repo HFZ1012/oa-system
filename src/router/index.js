@@ -70,6 +70,252 @@ export const asyncRoutes = [
     ],
   }, */
 
+
+  {
+    path: "/meeting",
+    component: Layout,
+    redirect: "noRedirect",
+    name: "Meeting",
+    alwaysShow: true,
+    meta: { title: "会议室管理", icon: "calendar-alt" },
+    children: [
+      { path: "register", name: "MeetingRegister", component: () => import("@/views/meeting/register.vue"), meta: { title: "会议室登记" } },
+      { path: "apply", name: "MeetingApply", component: () => import("@/views/meeting/apply.vue"), meta: { title: "会议室申请" } },
+      { path: "arrange", name: "MeetingArrange", component: () => import("@/views/meeting/arrange.vue"), meta: { title: "会议室安排" } }
+    ]
+  },
+  {
+    path: "/vehicle",
+    component: Layout,
+    redirect: "noRedirect",
+    name: "Vehicle",
+    alwaysShow: true,
+    meta: { title: "工作用车管理", icon: "route" },
+    children: [
+      { path: "apply", name: "VehicleApply", component: () => import("@/views/vehicle/apply.vue"), meta: { title: "工作用车申请" } },
+      { path: "arrange", name: "VehicleArrange", component: () => import("@/views/vehicle/arrange.vue"), meta: { title: "安排配车" } },
+      { path: "reserve", name: "VehicleReserve", component: () => import("@/views/vehicle/reserve.vue"), meta: { title: "预约情况" } }
+    ]
+  },
+  {
+    path: "/supplies",
+    component: Layout,
+    redirect: "noRedirect",
+    name: "Supplies",
+    alwaysShow: true,
+    meta: { title: "办公用品管理", icon: "box-open" },
+    children: [
+      { path: "receive", name: "SuppliesReceive", component: () => import("@/views/supplies/receive.vue"), meta: { title: "办公用品领用" } },
+      { path: "apply", name: "SuppliesApply", component: () => import("@/views/supplies/apply.vue"), meta: { title: "申请物品" } },
+      { path: "list", name: "SuppliesList", component: () => import("@/views/supplies/list.vue"), meta: { title: "领用申请列表" } }
+    ]
+  },
+  {
+    path: "/travel",
+    component: Layout,
+    redirect: "noRedirect",
+    name: "Travel",
+    alwaysShow: true,
+    meta: { title: "差旅餐饮住宿管理", icon: "coffee" },
+    children: [
+      { path: "apply", name: "TravelApply", component: () => import("@/views/travel/apply.vue"), meta: { title: "差旅申请" } },
+      { path: "list", name: "TravelList", component: () => import("@/views/travel/list.vue"), meta: { title: "差旅申请列表" } },
+      { path: "approve", name: "TravelApprove", component: () => import("@/views/travel/approve.vue"), meta: { title: "领导审批" } }
+    ]
+  },
+  {
+    path: "/seal",
+    component: Layout,
+    redirect: "noRedirect",
+    name: "Seal",
+    alwaysShow: true,
+    meta: { title: "印章管理", icon: "check-circle" },
+    children: [
+      { path: "apply", name: "SealApply", component: () => import("@/views/seal/apply.vue"), meta: { title: "内部使用申请" } },
+      { path: "list", name: "SealList", component: () => import("@/views/seal/list.vue"), meta: { title: "申请列表" } },
+      { path: "summary", name: "SealSummary", component: () => import("@/views/seal/summary.vue"), meta: { title: "使用汇总" } }
+    ]
+  },
+  {
+    path: "/work",
+    component: Layout,
+    redirect: "noRedirect",
+    name: "Work",
+    alwaysShow: true,
+    meta: { title: "工作安排", icon: "form" },
+    children: [
+      { path: "leader", name: "WorkLeader", component: () => import("@/views/work/leader.vue"), meta: { title: "院领导工作安排" } },
+      { path: "department", name: "WorkDepartment", component: () => import("@/views/work/department.vue"), meta: { title: "部门重点工作安排" } },
+      { path: "topic", name: "WorkTopic", component: () => import("@/views/work/topic.vue"), meta: { title: "新增议题" } }
+    ]
+  },
+  {
+    path: "/info",
+    component: Layout,
+    redirect: "noRedirect",
+    name: "Info",
+    alwaysShow: true,
+    meta: { title: "信息发布", icon: "bell" },
+    children: [
+      { path: "add", name: "InfoAdd", component: () => import("@/views/info/add.vue"), meta: { title: "新增发布信息" } },
+      { path: "list", name: "InfoList", component: () => import("@/views/info/list.vue"), meta: { title: "信息列表" } },
+      { path: "audit", name: "InfoAudit", component: () => import("@/views/info/audit.vue"), meta: { title: "信息审核" } }
+    ]
+  },
+  {
+    path: "/property",
+    component: Layout,
+    redirect: "noRedirect",
+    name: "Property",
+    alwaysShow: true,
+    meta: { title: "物业管理", icon: "home" },
+    children: [
+      { path: "repair", name: "PropertyRepair", component: () => import("@/views/property/repair.vue"), meta: { title: "维修申请" } },
+      { path: "list", name: "PropertyList", component: () => import("@/views/property/list.vue"), meta: { title: "维修申请列表" } },
+      { path: "evaluate", name: "PropertyEvaluate", component: () => import("@/views/property/evaluate.vue"), meta: { title: "评价" } }
+    ]
+  },
+  {
+    path: "/system",
+    component: Layout,
+    redirect: "noRedirect",
+    name: "System",
+    alwaysShow: true,
+    meta: { title: "系统管理", icon: "cog" },
+    children: [
+      {
+        path: "user",
+        name: "UserManagement",
+        component: () => import("@/views/vab/table.vue"),
+        meta: { title: "用户管理" }
+      },
+      {
+        path: "role",
+        name: "RoleManagement",
+        component: () => import("@/views/vab/table.vue"),
+        meta: { title: "角色管理" }
+      },
+      {
+        path: "menu",
+        name: "MenuManagement",
+        component: () => import("@/views/vab/table.vue"),
+        meta: { title: "菜单管理" }
+      }
+    ]
+  },
+
+
+  /* {
+    path: "/external-store",
+    component: Layout,
+    meta: {
+      title: "",
+      icon: "",
+    },
+    children: [
+      {
+        path: "https://vuejs-core.cn/store",
+        meta: {
+          title: "模板市场",
+          target: "_blank",
+          icon: "box-open",
+        },
+      },
+    ],
+  },
+  {
+    path: "/external-job",
+    component: Layout,
+    meta: {
+      title: "",
+      icon: "",
+    },
+    children: [
+      {
+        path: "https://job.vuejs-core.cn/posts",
+        meta: {
+          title: "找工作",
+          target: "_blank",
+          icon: "horse-head",
+        },
+      },
+    ],
+  },
+  /* {
+    path: "/error",
+    component: EmptyLayout,
+    redirect: "noRedirect",
+    name: "Error",
+    meta: { title: "错误页", icon: "bug" },
+    children: [
+      {
+        path: "401",
+        name: "Error401",
+        component: () => import("@/views/401"),
+        meta: { title: "401" },
+      },
+      {
+        path: "404",
+        name: "Error404",
+        component: () => import("@/views/404"),
+        meta: { title: "404" },
+      },
+    ],
+  },
+    {
+    path: '/donate-menu',
+    component: Layout,
+    meta: {
+      title: '支持我们',
+      icon: 'heart',
+    },
+    children: [
+      {
+        path: '/donate',
+        component: () => import('@/views/donate/index'),
+        meta: {
+          title: '支持我们',
+          icon: 'heart',
+          badge: 'Donate',
+        },
+      },
+    ],
+  },
+  {
+    path: "/task",
+    component: Layout,
+    redirect: "noRedirect",
+    name: "Task",
+    alwaysShow: true,
+    meta: { title: "任务管理", icon: "list-ul" },
+    children: [
+      {
+        path: "list",
+        name: "TaskList",
+        component: () => import("@/views/task/list.vue"),
+        meta: {
+          title: "任务管理列表",
+          permissions: ["admin"],
+        },
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    component: Layout,
+    redirect: "noRedirect",
+    children: [
+      {
+        path: "index",
+        name: "Dashboard",
+        component: () => import("@/views/index/dashboard.vue"),
+        meta: {
+          title: "原首页",
+          icon: "box-open",
+        },
+      },
+    ],
+  },
   {
     path: "/vab",
     component: Layout,
@@ -222,15 +468,7 @@ export const asyncRoutes = [
           permissions: ["admin"],
         },
       },
-      {
-        path: "task",
-        name: "Task",
-        component: () => import("@/views/vab/task.vue"),
-        meta: {
-          title: "任务管理",
-          permissions: ["admin"],
-        },
-      },
+
       {
         path: "statistics",
         name: "Statistics",
@@ -322,84 +560,7 @@ export const asyncRoutes = [
       //   },
       // },
     ],
-  },
-
-  {
-    path: "/external-store",
-    component: Layout,
-    meta: {
-      title: "",
-      icon: "",
-    },
-    children: [
-      {
-        path: "https://vuejs-core.cn/store",
-        meta: {
-          title: "模板市场",
-          target: "_blank",
-          icon: "box-open",
-        },
-      },
-    ],
-  },
-  {
-    path: "/external-job",
-    component: Layout,
-    meta: {
-      title: "",
-      icon: "",
-    },
-    children: [
-      {
-        path: "https://job.vuejs-core.cn/posts",
-        meta: {
-          title: "找工作",
-          target: "_blank",
-          icon: "horse-head",
-        },
-      },
-    ],
-  },
-  {
-    path: "/error",
-    component: EmptyLayout,
-    redirect: "noRedirect",
-    name: "Error",
-    meta: { title: "错误页", icon: "bug" },
-    children: [
-      {
-        path: "401",
-        name: "Error401",
-        component: () => import("@/views/401"),
-        meta: { title: "401" },
-      },
-      {
-        path: "404",
-        name: "Error404",
-        component: () => import("@/views/404"),
-        meta: { title: "404" },
-      },
-    ],
-  },
-    {
-    path: '/donate-menu',
-    component: Layout,
-    meta: {
-      title: '支持我们',
-      icon: 'heart',
-    },
-    children: [
-      {
-        path: '/donate',
-        component: () => import('@/views/donate/index'),
-        meta: {
-          title: '支持我们',
-          icon: 'heart',
-          badge: 'Donate',
-        },
-      },
-    ],
-  },
+  }, */
   {
     path: "/:pathMatch(.*)*",
     redirect: "/404",

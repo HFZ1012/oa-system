@@ -75,8 +75,7 @@
 
       <div class="login-image">
         <div class="overlay">
-          <h2 class="slogan">高效 · 便捷 · 安全</h2>
-          <p class="description">基于Vue3的现代化管理系统</p>
+          <h2 class="slogan">中国科学院<br />上海分院办公系统</h2>
         </div>
       </div>
     </div>
@@ -322,7 +321,7 @@ const { form, rules, loading, passwordType, redirect } = toRefs(state);
 .login-image {
   width: 50%;
   position: relative;
-  background: url("~@/assets/login_images/background.jpg") center center
+  background: url("~@/assets/login_images/background2.png") center center
     no-repeat;
   background-size: cover;
 

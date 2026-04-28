@@ -17,6 +17,150 @@ const data = [
     ],
   },
   {
+    path: "/meeting",
+    component: "Layout",
+    redirect: "noRedirect",
+    name: "Meeting",
+    alwaysShow: true,
+    meta: { title: "会议室管理", icon: "calendar-alt" },
+    children: [
+      { path: "register", name: "MeetingRegister", component: "@/views/meeting/register", meta: { title: "会议室登记" } },
+      { path: "apply", name: "MeetingApply", component: "@/views/meeting/apply", meta: { title: "会议室申请" } },
+      { path: "arrange", name: "MeetingArrange", component: "@/views/meeting/arrange", meta: { title: "会议室安排" } }
+    ]
+  },
+  {
+    path: "/vehicle",
+    component: "Layout",
+    redirect: "noRedirect",
+    name: "Vehicle",
+    alwaysShow: true,
+    meta: { title: "工作用车管理", icon: "route" },
+    children: [
+      { path: "apply", name: "VehicleApply", component: "@/views/vehicle/apply", meta: { title: "工作用车申请" } },
+      { path: "arrange", name: "VehicleArrange", component: "@/views/vehicle/arrange", meta: { title: "安排配车" } },
+      { path: "reserve", name: "VehicleReserve", component: "@/views/vehicle/reserve", meta: { title: "预约情况" } }
+    ]
+  },
+  {
+    path: "/supplies",
+    component: "Layout",
+    redirect: "noRedirect",
+    name: "Supplies",
+    alwaysShow: true,
+    meta: { title: "办公用品管理", icon: "box-open" },
+    children: [
+      { path: "receive", name: "SuppliesReceive", component: "@/views/supplies/receive", meta: { title: "办公用品领用" } },
+      { path: "apply", name: "SuppliesApply", component: "@/views/supplies/apply", meta: { title: "申请物品" } },
+      { path: "list", name: "SuppliesList", component: "@/views/supplies/list", meta: { title: "领用申请列表" } }
+    ]
+  },
+  {
+    path: "/travel",
+    component: "Layout",
+    redirect: "noRedirect",
+    name: "Travel",
+    alwaysShow: true,
+    meta: { title: "差旅餐饮住宿管理", icon: "coffee" },
+    children: [
+      { path: "apply", name: "TravelApply", component: "@/views/travel/apply", meta: { title: "差旅申请" } },
+      { path: "list", name: "TravelList", component: "@/views/travel/list", meta: { title: "差旅申请列表" } },
+      { path: "approve", name: "TravelApprove", component: "@/views/travel/approve", meta: { title: "领导审批" } }
+    ]
+  },
+  {
+    path: "/seal",
+    component: "Layout",
+    redirect: "noRedirect",
+    name: "Seal",
+    alwaysShow: true,
+    meta: { title: "印章管理", icon: "check-circle" },
+    children: [
+      { path: "apply", name: "SealApply", component: "@/views/seal/apply", meta: { title: "内部使用申请" } },
+      { path: "list", name: "SealList", component: "@/views/seal/list", meta: { title: "申请列表" } },
+      { path: "summary", name: "SealSummary", component: "@/views/seal/summary", meta: { title: "使用汇总" } }
+    ]
+  },
+  {
+    path: "/work",
+    component: "Layout",
+    redirect: "noRedirect",
+    name: "Work",
+    alwaysShow: true,
+    meta: { title: "工作安排", icon: "form" },
+    children: [
+      { path: "leader", name: "WorkLeader", component: "@/views/work/leader", meta: { title: "院领导工作安排" } },
+      { path: "department", name: "WorkDepartment", component: "@/views/work/department", meta: { title: "部门重点工作安排" } },
+      { path: "topic", name: "WorkTopic", component: "@/views/work/topic", meta: { title: "新增议题" } }
+    ]
+  },
+  {
+    path: "/info",
+    component: "Layout",
+    redirect: "noRedirect",
+    name: "Info",
+    alwaysShow: true,
+    meta: { title: "信息发布", icon: "bell" },
+    children: [
+      { path: "add", name: "InfoAdd", component: "@/views/info/add", meta: { title: "新增发布信息" } },
+      { path: "list", name: "InfoList", component: "@/views/info/list", meta: { title: "信息列表" } },
+      { path: "audit", name: "InfoAudit", component: "@/views/info/audit", meta: { title: "信息审核" } }
+    ]
+  },
+  {
+    path: "/property",
+    component: "Layout",
+    redirect: "noRedirect",
+    name: "Property",
+    alwaysShow: true,
+    meta: { title: "物业管理", icon: "home" },
+    children: [
+      { path: "repair", name: "PropertyRepair", component: "@/views/property/repair", meta: { title: "维修申请" } },
+      { path: "list", name: "PropertyList", component: "@/views/property/list", meta: { title: "维修申请列表" } },
+      { path: "evaluate", name: "PropertyEvaluate", component: "@/views/property/evaluate", meta: { title: "评价" } }
+    ]
+  },
+
+
+
+  {
+    path: "/error",
+    component: "EmptyLayout",
+    redirect: "noRedirect",
+    name: "Error",
+    meta: { title: "错误页", icon: "bug" },
+    children: [
+      {
+        path: "401",
+        name: "Error401",
+        component: "@/views/401",
+        meta: { title: "401" },
+      },
+      {
+        path: "404",
+        name: "Error404",
+        component: "@/views/404",
+        meta: { title: "404" },
+      },
+    ],
+  },
+{
+    path: "/dashboard",
+    component: "Layout",
+    redirect: "noRedirect",
+    children: [
+      {
+        path: "index",
+        name: "Dashboard",
+        component: "@/views/index/dashboard",
+        meta: {
+          title: "原首页",
+          icon: "box-open",
+        },
+      },
+    ],
+  },
+  {
     path: "/vab",
     component: "Layout",
     redirect: "noRedirect",
@@ -153,27 +297,6 @@ const data = [
         name: "More",
         component: "@/views/vab/more/index",
         meta: { title: "关于", permissions: ["admin"] },
-      },
-    ],
-  },
-  {
-    path: "/error",
-    component: "EmptyLayout",
-    redirect: "noRedirect",
-    name: "Error",
-    meta: { title: "错误页", icon: "bug" },
-    children: [
-      {
-        path: "401",
-        name: "Error401",
-        component: "@/views/401",
-        meta: { title: "401" },
-      },
-      {
-        path: "404",
-        name: "Error404",
-        component: "@/views/404",
-        meta: { title: "404" },
       },
     ],
   },
