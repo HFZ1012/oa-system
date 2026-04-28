@@ -1,0 +1,1 @@
+(self.rspackChunkvue3_admin_better=self.rspackChunkvue3_admin_better||[]).push([[8981],{3076:function(e,s,t){let{setting:n,theme:u,network:a}=t(69481);e.exports=Object.assign({},n,u,a)}}]);
