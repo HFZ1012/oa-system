@@ -249,7 +249,7 @@ module.exports = {
   devServer: {
     hot: true,
     // 使用配置文件中的端口
-    port: devPort || 8091,
+    port: devPort || 8092,
     historyApiFallback: true,
     static: {
       directory: path.join(__dirname, "public"),
@@ -261,7 +261,7 @@ module.exports = {
       },
     },
     open: {
-      target: [`http://localhost:${devPort || 8091}`],
+      target: [`http://localhost:${devPort || 8092}`],
     },
     setupMiddlewares: (middlewares, devServer) => {
       if (!devServer) {

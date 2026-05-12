@@ -15,7 +15,7 @@ const setting = {
   //简写
   abbreviation: "vab",
   //开发环境端口号
-  devPort: "8091",
+  devPort: "8092",
   //copyright
   copyright: "zxwk1998",
   //是否显示页面底部自定义版权信息

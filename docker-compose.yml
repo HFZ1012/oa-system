@@ -1,19 +1,6 @@
+# MySQL 容器已移除，项目已迁移至达梦数据库 (192.168.0.222:5236)
+# 如需重新添加数据库容器，请在此文件中定义
 version: '3.8'
 
-services:
-  mysql:
-    image: mysql:8.0
-    container_name: vue3_admin_mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: vue3_admin
-      MYSQL_USER: admin
-      MYSQL_PASSWORD: admin_password
-    ports:
-      - "3306:3306"
-    volumes:
-      - mysql_data:/var/lib/mysql
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-
 volumes:
-  mysql_data:
+  data:
