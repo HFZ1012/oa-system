@@ -30,8 +30,8 @@ importers:
         specifier: 6.1.0
         version: 6.1.0
       element-plus:
-        specifier: ^2.14.0
-        version: 2.14.0(vue@3.5.35)
+        specifier: ^2.14.1
+        version: 2.14.1(vue@3.5.35)
       jsencrypt:
         specifier: ^3.5.4
         version: 3.5.4
@@ -83,13 +83,13 @@ importers:
         version: 7.29.7(@babel/core@7.29.7)
       '@rspack/cli':
         specifier: ^2.0.5
-        version: 2.0.5(@rspack/core@2.0.5)(@rspack/dev-server@2.0.2(@rspack/core@2.0.5))
+        version: 2.0.5(@rspack/core@2.0.5)(@rspack/dev-server@2.0.3(@rspack/core@2.0.5))
       '@rspack/core':
         specifier: ^2.0.5
         version: 2.0.5
       '@rspack/dev-server':
-        specifier: ^2.0.2
-        version: 2.0.2(@rspack/core@2.0.5)
+        specifier: ^2.0.3
+        version: 2.0.3(@rspack/core@2.0.5)
       '@vue/compiler-sfc':
         specifier: ^3.5.35
         version: 3.5.35
@@ -112,8 +112,8 @@ importers:
         specifier: ^7.1.4
         version: 7.1.4(@rspack/core@2.0.5)(webpack@5.106.2)
       html-rspack-plugin:
-        specifier: ^6.1.8
-        version: 6.1.8(@rspack/core@2.0.5)
+        specifier: ^6.1.9
+        version: 6.1.9(@rspack/core@2.0.5)
       path-browserify:
         specifier: ^1.0.1
         version: 1.0.1
@@ -801,8 +801,8 @@ packages:
       '@rspack/core':
         optional: true
 
-  '@rspack/dev-server@2.0.2':
-    resolution: {integrity: sha512-gE1FdeXtTX92t/5TIzOUxKV90UuyNfMT3PlSqrkGz7E0I3SbvnmLB0ewIJUEBA/up22m55rRxEG6jK9yajYCAw==}
+  '@rspack/dev-server@2.0.3':
+    resolution: {integrity: sha512-S29nOxXQS9o+0uGNe7SgND2dAKnte5ZTD5tiT3/B4lKbviqpXD4tbH7NZWA3hGwlSkmOIbFlysYPL1bVHuBcSg==}
     engines: {node: ^20.19.0 || >=22.12.0}
     peerDependencies:
       '@rspack/core': ^2.0.0-0
@@ -1297,8 +1297,8 @@ packages:
   electron-to-chromium@1.5.344:
     resolution: {integrity: sha512-4MxfbmNDm+KPh066EZy+eUnkcDPcZ35wNmOWzFuh/ijvHsve6kbLTLURy88uCNK5FbpN+yk2nQY6BYh1GEt+wg==}
 
-  element-plus@2.14.0:
-    resolution: {integrity: sha512-POgH+TtoreaEKWqYYAVQyE6i8rQMEFqAEublyF29dBA5yASWPLKY6EzfeqBTr2Uv26mPss4vSrMrNPyaK7LX5w==}
+  element-plus@2.14.1:
+    resolution: {integrity: sha512-UFnm1+BckNi+azkKJ7L32q1uXs9ekr99Z9pWTQPeDR05jqEWUwQq51ro4kZMVrANbjknX3Z7ukCZwTi2T6Tr9A==}
     peerDependencies:
       vue: ^3.3.7
 
@@ -1476,8 +1476,8 @@ packages:
   hookable@5.5.3:
     resolution: {integrity: sha512-Yc+BQe8SvoXH1643Qez1zqLRmbA5rCL+sSmk6TVos0LWVfNIB7PGncdlId77WzLGSIB5KaWgTaNTs2lNVEI6VQ==}
 
-  html-rspack-plugin@6.1.8:
-    resolution: {integrity: sha512-lvcM0D7Bx0V4KI3Ixi5TDoAejtaj0/cGm2NczwsCTvk76rZt2DDIJwAkwfBQkK0j1PNeNTdvvUc1Zekamc8gpQ==}
+  html-rspack-plugin@6.1.9:
+    resolution: {integrity: sha512-GWdHEsyXrP4b2SSCzJfYKO/+r6DkNBeJytk2VKQwlrFuKCeCneIXpY1Cty3uYgH7jsAuPKkR1I1Cr2sOeX5KBg==}
     engines: {node: '>=16.20.2'}
     peerDependencies:
       '@rspack/core': ^1.0.0 || ^2.0.0-0
@@ -2083,8 +2083,8 @@ packages:
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
-  vue-component-type-helpers@3.2.8:
-    resolution: {integrity: sha512-9689efAXhN/EV86plgkL/XFiJSXhGtWPG6JDboZ+QnjlUWUUQrQ0ILKQtw4iQsuwIwu5k6Aw+JnehDe7161e7A==}
+  vue-component-type-helpers@3.3.2:
+    resolution: {integrity: sha512-l4Z2Y34m7nFMlx8vrslJaVtXxUpzgDMSESC7TakG/c5kwjYT/do+E0NcT2/vWDzaoIhsShg/2OKwX7Q4nbzC0g==}
 
   vue-echarts@8.0.1:
     resolution: {integrity: sha512-23rJTFLu1OUEGRWjJGmdGt8fP+8+ja1gVgzMYPIPaHWpXegcO1viIAaeu2H4QHESlVeHzUAHIxKXGrwjsyXAaA==}
@@ -2988,11 +2988,11 @@ snapshots:
       '@rspack/binding-win32-ia32-msvc': 2.0.5
       '@rspack/binding-win32-x64-msvc': 2.0.5
 
-  '@rspack/cli@2.0.5(@rspack/core@2.0.5)(@rspack/dev-server@2.0.2(@rspack/core@2.0.5))':
+  '@rspack/cli@2.0.5(@rspack/core@2.0.5)(@rspack/dev-server@2.0.3(@rspack/core@2.0.5))':
     dependencies:
       '@rspack/core': 2.0.5
     optionalDependencies:
-      '@rspack/dev-server': 2.0.2(@rspack/core@2.0.5)
+      '@rspack/dev-server': 2.0.3(@rspack/core@2.0.5)
 
   '@rspack/core@2.0.5':
     dependencies:
@@ -3002,7 +3002,7 @@ snapshots:
     optionalDependencies:
       '@rspack/core': 2.0.5
 
-  '@rspack/dev-server@2.0.2(@rspack/core@2.0.5)':
+  '@rspack/dev-server@2.0.3(@rspack/core@2.0.5)':
     dependencies:
       '@rspack/core': 2.0.5
       '@rspack/dev-middleware': 2.0.1(@rspack/core@2.0.5)
@@ -3550,7 +3550,7 @@ snapshots:
 
   electron-to-chromium@1.5.344: {}
 
-  element-plus@2.14.0(vue@3.5.35):
+  element-plus@2.14.1(vue@3.5.35):
     dependencies:
       '@ctrl/tinycolor': 4.2.0
       '@element-plus/icons-vue': 2.3.2(vue@3.5.35)
@@ -3567,7 +3567,7 @@ snapshots:
       memoize-one: 6.0.0
       normalize-wheel-es: 1.2.0
       vue: 3.5.35
-      vue-component-type-helpers: 3.2.8
+      vue-component-type-helpers: 3.3.2
 
   enhanced-resolve@5.21.0:
     dependencies:
@@ -3716,7 +3716,7 @@ snapshots:
 
   hookable@5.5.3: {}
 
-  html-rspack-plugin@6.1.8(@rspack/core@2.0.5):
+  html-rspack-plugin@6.1.9(@rspack/core@2.0.5):
     dependencies:
       '@rspack/lite-tapable': 1.1.0
     optionalDependencies:
@@ -4271,7 +4271,7 @@ snapshots:
 
   util-deprecate@1.0.2: {}
 
-  vue-component-type-helpers@3.2.8: {}
+  vue-component-type-helpers@3.3.2: {}
 
   vue-echarts@8.0.1(echarts@6.1.0)(vue@3.5.35):
     dependencies:
