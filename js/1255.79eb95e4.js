@@ -1,0 +1,1 @@
+"use strict";(self.rspackChunkvue3_admin_better=self.rspackChunkvue3_admin_better||[]).push([[1255],{1322:function(e,n,t){t.r(n);var r=t(98225);function s(e){return!!e&&e instanceof Array&&!!(e.length>0)&&r.default.getters["user/permissions"].some(n=>e.includes(n))}t.d(n,{default:function(){return s}})}}]);

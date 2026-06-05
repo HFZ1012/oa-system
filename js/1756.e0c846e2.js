@@ -1,0 +1,1 @@
+"use strict";(self.rspackChunkvue3_admin_better=self.rspackChunkvue3_admin_better||[]).push([[1756],{45111:function(t,e,u){u.r(e);var n=u(20512);function r(){return(0,n.default)({url:"https://api.vuejs-core.cn/getAd",method:"get"})}u.d(e,{getList:function(){return r}})}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.rspackChunkvue3_admin_better=self.rspackChunkvue3_admin_better||[]).push([[523],{78806:function(e,t,r){r.r(t);var u=r(20512);function n(e){return(0,u.default)({url:"/tree/list",method:"post",data:e})}r.d(t,{getTreeList:function(){return n}})}}]);

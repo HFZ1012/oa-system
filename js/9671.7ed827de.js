@@ -1,0 +1,1 @@
+"use strict";(self.rspackChunkvue3_admin_better=self.rspackChunkvue3_admin_better||[]).push([[9671],{48490:function(e,t,u){u.r(t),u(71793),t.default=u(9931).Ay}}]);
