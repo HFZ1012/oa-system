@@ -38,8 +38,8 @@ const data = [
     meta: { title: "工作用车管理", icon: "route" },
     children: [
       { path: "apply", name: "VehicleApply", component: "@/views/vehicle/apply", meta: { title: "工作用车申请" } },
-      { path: "arrange", name: "VehicleArrange", component: "@/views/vehicle/arrange", meta: { title: "安排配车" } },
-      { path: "reserve", name: "VehicleReserve", component: "@/views/vehicle/reserve", meta: { title: "预约情况" } }
+      { path: "arrange", name: "VehicleArrange", component: "@/views/vehicle/arrange", meta: { title: "车辆调度" } },
+      { path: "reserve", name: "VehicleReserve", component: "@/views/vehicle/reserve", meta: { title: "预约记录" } }
     ]
   },
   {
@@ -113,7 +113,7 @@ const data = [
     redirect: "noRedirect",
     name: "Property",
     alwaysShow: true,
-    meta: { title: "物业管理", icon: "home" },
+    meta: { title: "物业报修", icon: "home" },
     children: [
       { path: "repair", name: "PropertyRepair", component: "@/views/property/repair", meta: { title: "维修申请" } },
       { path: "list", name: "PropertyList", component: "@/views/property/list", meta: { title: "维修申请列表" } },

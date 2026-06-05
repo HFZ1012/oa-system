@@ -26,8 +26,8 @@ const newModulesStr = `
     meta: { title: "工作用车管理", icon: "car" },
     children: [
       { path: "apply", name: "VehicleApply", component: () => import("@/views/vehicle/apply.vue"), meta: { title: "工作用车申请" } },
-      { path: "arrange", name: "VehicleArrange", component: () => import("@/views/vehicle/arrange.vue"), meta: { title: "安排配车" } },
-      { path: "reserve", name: "VehicleReserve", component: () => import("@/views/vehicle/reserve.vue"), meta: { title: "预约情况" } }
+      { path: "arrange", name: "VehicleArrange", component: () => import("@/views/vehicle/arrange.vue"), meta: { title: "车辆调度" } },
+      { path: "reserve", name: "VehicleReserve", component: () => import("@/views/vehicle/reserve.vue"), meta: { title: "预约记录" } }
     ]
   },
   {
@@ -101,7 +101,7 @@ const newModulesStr = `
     redirect: "noRedirect",
     name: "Property",
     alwaysShow: true,
-    meta: { title: "物业管理", icon: "building" },
+    meta: { title: "物业报修", icon: "building" },
     children: [
       { path: "repair", name: "PropertyRepair", component: () => import("@/views/property/repair.vue"), meta: { title: "维修申请" } },
       { path: "list", name: "PropertyList", component: () => import("@/views/property/list.vue"), meta: { title: "维修申请列表" } },

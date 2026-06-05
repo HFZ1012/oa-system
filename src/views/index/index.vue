@@ -1,12 +1,31 @@
 <template>
   <div class="new-index-container">
-    <!-- 上方两列模块：左侧2/3通知公告，右侧1/3待审批 -->
+    <el-card class="top-bar-card" shadow="never">
+      <div class="top-bar-content">
+        <div class="top-bar-links">
+          <div
+            v-for="item in topQuickLinks"
+            :key="item.name"
+            class="top-bar-link"
+            @click="openTopQuickLink(item)"
+          >
+            <span class="top-bar-icon" :style="{ background: item.bg }">
+              <el-icon><component :is="item.icon" /></el-icon>
+            </span>
+            <span class="top-bar-text">{{ item.name }}</span>
+          </div>
+        </div>
+        <div class="top-bar-spacer"></div>
+      </div>
+    </el-card>
+
+    <!-- 上方两列模块：左侧2/3通知通告，右侧1/3待审批 -->
     <el-row :gutter="20">
       <el-col :xs="24" :sm="24" :md="16" :lg="16" :xl="16">
         <el-card class="notification-card" shadow="hover">
           <template #header>
             <div class="card-header">
-              <span class="card-title"><el-icon><Bell /></el-icon> 通知公告</span>
+              <span class="card-title"><el-icon><Bell /></el-icon> 通知通告</span>
               <el-button type="primary" link>更多</el-button>
             </div>
           </template>
@@ -53,7 +72,7 @@
             </div>
             <div class="approval-item">
               <div class="icon-wrapper" style="background-color: #fdf6ec; color: #e6a23c;">
-                <el-icon><Van /></el-icon>
+                <el-icon><Briefcase /></el-icon>
               </div>
               <div class="approval-content">
                 <div class="approval-title">差旅审批</div>
@@ -63,7 +82,7 @@
             </div>
             <div class="approval-item">
               <div class="icon-wrapper" style="background-color: #fef0f0; color: #f56c6c;">
-                <el-icon><Connection /></el-icon>
+                <el-icon><Van /></el-icon>
               </div>
               <div class="approval-content">
                 <div class="approval-title">工作用车审批</div>
@@ -97,16 +116,50 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { ElMessage } from 'element-plus'
 import {
   Bell, Finished, User, Document, Van, Message, Notebook, Notification,
-  Calendar, Connection, Box, Coffee, SuccessFilled, HomeFilled
+  Calendar, Guide, Box, Briefcase, Stamp, Files, Promotion, OfficeBuilding,
+  Timer, ChatLineSquare, Reading, Service, Location, Wallet, Download
 } from '@element-plus/icons-vue'
 
 const router = useRouter()
 
 const navigateTo = (route) => {
-  router.push(route)
+  if (route) {
+    router.push(route)
+  }
 }
+
+const openTopQuickLink = (item) => {
+  if (item.href) {
+    window.open(item.href, '_blank', 'noopener,noreferrer')
+    return
+  }
+
+  ElMessage.info(`${item.name}链接待配置`)
+}
+
+const topQuickLinks = [
+  {
+    name: '分院网站',
+    icon: OfficeBuilding,
+    href: '',
+    bg: 'linear-gradient(135deg, #5ad8a6 0%, #1fab89 100%)',
+  },
+  {
+    name: 'ARP系统',
+    icon: Guide,
+    href: '',
+    bg: 'linear-gradient(135deg, #6aa9ff 0%, #3f7df7 100%)',
+  },
+  {
+    name: '邮箱登录',
+    icon: Message,
+    href: '',
+    bg: 'linear-gradient(135deg, #ffb36b 0%, #f47c48 100%)',
+  },
+]
 
 const notifications = ref([
   { title: '上海分院房产出租公示', date: '04-22', isNew: true },
@@ -122,13 +175,21 @@ const notifications = ref([
 
 const shortcuts = ref([
   { name: '会议室管理', icon: 'Calendar', bg: 'linear-gradient(135deg, #6BB5F8 0%, #358DE8 100%)', route: '/meeting/register' },
-  { name: '工作用车管理', icon: 'Connection', bg: 'linear-gradient(135deg, #C2E55C 0%, #90C81A 100%)', route: '/vehicle/apply' },
+  { name: '预约', icon: 'Van', bg: 'linear-gradient(135deg, #C2E55C 0%, #90C81A 100%)', route: '/vehicle/apply' },
   { name: '办公用品管理', icon: 'Box', bg: 'linear-gradient(135deg, #A89BFA 0%, #765EE5 100%)', route: '/supplies/apply' },
-  { name: '差旅餐饮住宿', icon: 'Coffee', bg: 'linear-gradient(135deg, #FFA1A1 0%, #F55959 100%)', route: '/travel/apply' },
-  { name: '印章管理', icon: 'SuccessFilled', bg: 'linear-gradient(135deg, #51E1C2 0%, #16B894 100%)', route: '/seal/apply' },
-  { name: '工作安排', icon: 'Document', bg: 'linear-gradient(135deg, #F896CC 0%, #E64E9A 100%)', route: '/work/arrange' },
-  { name: '信息发布', icon: 'Bell', bg: 'linear-gradient(135deg, #8FA4FF 0%, #4B6BFA 100%)', route: '/info/add' },
-  { name: '物业管理', icon: 'HomeFilled', bg: 'linear-gradient(135deg, #FFC470 0%, #F88F22 100%)', route: '/property/repair' },
+  { name: '出差管理', icon: 'Briefcase', bg: 'linear-gradient(135deg, #FFA1A1 0%, #F55959 100%)', route: '/travel/apply' },
+  { name: '印章管理', icon: 'Stamp', bg: 'linear-gradient(135deg, #51E1C2 0%, #16B894 100%)', route: '/seal/apply' },
+  { name: '一周工作安排', icon: 'Files', bg: 'linear-gradient(135deg, #F896CC 0%, #E64E9A 100%)', route: '/work/arrange' },
+  { name: '信息发布', icon: 'Promotion', bg: 'linear-gradient(135deg, #8FA4FF 0%, #4B6BFA 100%)', route: '/info/add' },
+  { name: '物业报修', icon: 'OfficeBuilding', bg: 'linear-gradient(135deg, #FFC470 0%, #F88F22 100%)', route: '/property/repair' },
+  { name: '考勤管理', icon: 'Timer', bg: 'linear-gradient(135deg, #72EDF2 0%, #5151E5 100%)', route: '/attendance/index' },
+  { name: '工作备忘录', icon: 'Notebook', bg: 'linear-gradient(135deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%)', route: '/work/memo' },
+  { name: '办公会议题', icon: 'ChatLineSquare', bg: 'linear-gradient(135deg, #A18CD1 0%, #FBC2EB 100%)', route: '/work/topic' },
+  { name: '继续教育', icon: 'Reading', bg: 'linear-gradient(135deg, #FAD0C4 0%, #FFD1FF 100%)', route: '/education/index' },
+  { name: '公务接待管理', icon: 'Service', bg: 'linear-gradient(135deg, #84FAB0 0%, #8FD3F4 100%)', route: '/reception/index' },
+  { name: '分院制度', icon: 'Document', bg: 'linear-gradient(135deg, #A6C0FE 0%, #F68084 100%)', route: '/foreign-affairs/index' },
+  { name: '通知通告', icon: 'Bell', bg: 'linear-gradient(135deg, #5EE7DF 0%, #B490D2 100%)', route: '/info/notice' },
+  { name: '常用下载', icon: 'Download', bg: 'linear-gradient(135deg, #84FAB0 0%, #8FD3F4 100%)', route: '/download/index' },
 ])
 </script>
 
@@ -137,6 +198,74 @@ const shortcuts = ref([
   padding: 20px;
   background-color: #f5f7f8;
   min-height: calc(100vh - 84px);
+}
+
+.top-bar-card {
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 12px;
+
+  :deep(.el-card__body) {
+    padding: 14px 20px;
+  }
+}
+
+.top-bar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 56px;
+}
+
+.top-bar-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.top-bar-link {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 88px;
+  padding: 10px 14px;
+  border-radius: 16px;
+  color: #303133;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #f0f7ff;
+    color: #409eff;
+  }
+}
+
+.top-bar-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 18px;
+  box-shadow: 0 4px 12px rgba(64, 158, 255, 0.18);
+}
+
+.top-bar-text {
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+.top-bar-spacer {
+  flex: 1;
 }
 
 .card-header {
@@ -259,6 +388,14 @@ const shortcuts = ref([
 @media (max-width: 992px) {
   .margin-top-xs {
     margin-top: 20px;
+  }
+
+  .top-bar-content {
+    align-items: flex-start;
+  }
+
+  .top-bar-spacer {
+    display: none;
   }
 }
 

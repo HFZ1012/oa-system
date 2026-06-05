@@ -90,11 +90,11 @@ export const asyncRoutes = [
     redirect: "noRedirect",
     name: "Vehicle",
     alwaysShow: true,
-    meta: { title: "工作用车管理", icon: "route" },
+    meta: { title: "预约", icon: "van" },
     children: [
-      { path: "apply", name: "VehicleApply", component: () => import("@/views/vehicle/apply.vue"), meta: { title: "工作用车申请" } },
-      { path: "arrange", name: "VehicleArrange", component: () => import("@/views/vehicle/arrange.vue"), meta: { title: "安排配车" } },
-      { path: "reserve", name: "VehicleReserve", component: () => import("@/views/vehicle/reserve.vue"), meta: { title: "预约情况" } }
+      { path: "apply", name: "VehicleApply", component: () => import("@/views/vehicle/apply.vue"), meta: { title: "车辆预约" } },
+      { path: "arrange", name: "VehicleArrange", component: () => import("@/views/vehicle/arrange.vue"), meta: { title: "车辆调度" } },
+      { path: "reserve", name: "VehicleReserve", component: () => import("@/views/vehicle/reserve.vue"), meta: { title: "预约记录" } }
     ]
   },
   {
@@ -116,7 +116,7 @@ export const asyncRoutes = [
     redirect: "noRedirect",
     name: "Travel",
     alwaysShow: true,
-    meta: { title: "差旅餐饮住宿管理", icon: "coffee" },
+    meta: { title: "出差管理", icon: "briefcase" },
     children: [
       { path: "apply", name: "TravelApply", component: () => import("@/views/travel/apply.vue"), meta: { title: "差旅申请" } },
       { path: "list", name: "TravelList", component: () => import("@/views/travel/list.vue"), meta: { title: "差旅申请列表" } },
@@ -129,7 +129,7 @@ export const asyncRoutes = [
     redirect: "noRedirect",
     name: "Seal",
     alwaysShow: true,
-    meta: { title: "印章管理", icon: "check-circle" },
+    meta: { title: "印章管理", icon: "stamp" },
     children: [
       { path: "apply", name: "SealApply", component: () => import("@/views/seal/apply.vue"), meta: { title: "内部使用申请" } },
       { path: "list", name: "SealList", component: () => import("@/views/seal/list.vue"), meta: { title: "申请列表" } },
@@ -142,11 +142,10 @@ export const asyncRoutes = [
     redirect: "noRedirect",
     name: "Work",
     alwaysShow: true,
-    meta: { title: "工作安排", icon: "form" },
+    meta: { title: "一周工作安排", icon: "files" },
     children: [
       { path: "leader", name: "WorkLeader", component: () => import("@/views/work/leader.vue"), meta: { title: "院领导工作安排" } },
-      { path: "department", name: "WorkDepartment", component: () => import("@/views/work/department.vue"), meta: { title: "部门重点工作安排" } },
-      { path: "topic", name: "WorkTopic", component: () => import("@/views/work/topic.vue"), meta: { title: "新增议题" } }
+      { path: "department", name: "WorkDepartment", component: () => import("@/views/work/department.vue"), meta: { title: "部门重点工作安排" } }
     ]
   },
   {
@@ -155,7 +154,7 @@ export const asyncRoutes = [
     redirect: "noRedirect",
     name: "Info",
     alwaysShow: true,
-    meta: { title: "信息发布", icon: "bell" },
+    meta: { title: "信息发布", icon: "promotion" },
     children: [
       { path: "add", name: "InfoAdd", component: () => import("@/views/info/add.vue"), meta: { title: "新增发布信息" } },
       { path: "list", name: "InfoList", component: () => import("@/views/info/list.vue"), meta: { title: "信息列表" } },
@@ -168,11 +167,99 @@ export const asyncRoutes = [
     redirect: "noRedirect",
     name: "Property",
     alwaysShow: true,
-    meta: { title: "物业管理", icon: "home" },
+    meta: { title: "物业报修", icon: "office-building" },
     children: [
       { path: "repair", name: "PropertyRepair", component: () => import("@/views/property/repair.vue"), meta: { title: "维修申请" } },
       { path: "list", name: "PropertyList", component: () => import("@/views/property/list.vue"), meta: { title: "维修申请列表" } },
       { path: "evaluate", name: "PropertyEvaluate", component: () => import("@/views/property/evaluate.vue"), meta: { title: "评价" } }
+    ]
+  },
+  {
+    path: "/attendance",
+    component: Layout,
+    redirect: "noRedirect",
+    name: "Attendance",
+    alwaysShow: true,
+    meta: { title: "考勤管理", icon: "timer" },
+    children: [
+      { path: "index", name: "AttendanceIndex", component: () => import("@/views/vab/table.vue"), meta: { title: "考勤打卡" } }
+    ]
+  },
+  {
+    path: "/work-memo",
+    component: Layout,
+    redirect: "noRedirect",
+    name: "WorkMemoGroup",
+    alwaysShow: true,
+    meta: { title: "工作备忘录", icon: "notebook-1" },
+    children: [
+      { path: "index", name: "WorkMemo", component: () => import("@/views/vab/table.vue"), meta: { title: "工作备忘录" } }
+    ]
+  },
+  {
+    path: "/work-topic",
+    component: Layout,
+    redirect: "noRedirect",
+    name: "WorkTopicGroup",
+    alwaysShow: true,
+    meta: { title: "办公会议题", icon: "chat-square" },
+    children: [
+      { path: "index", name: "WorkTopic", component: () => import("@/views/work/topic.vue"), meta: { title: "办公会议题" } }
+    ]
+  },
+  {
+    path: "/education",
+    component: Layout,
+    redirect: "noRedirect",
+    name: "Education",
+    alwaysShow: true,
+    meta: { title: "继续教育", icon: "reading" },
+    children: [
+      { path: "index", name: "EducationIndex", component: () => import("@/views/vab/table.vue"), meta: { title: "学习中心" } }
+    ]
+  },
+  {
+    path: "/reception",
+    component: Layout,
+    redirect: "noRedirect",
+    name: "Reception",
+    alwaysShow: true,
+    meta: { title: "公务接待管理", icon: "service" },
+    children: [
+      { path: "index", name: "ReceptionIndex", component: () => import("@/views/vab/table.vue"), meta: { title: "接待申请" } }
+    ]
+  },
+  {
+    path: "/foreign-affairs",
+    component: Layout,
+    redirect: "noRedirect",
+    name: "ForeignAffairs",
+    alwaysShow: true,
+    meta: { title: "分院制度", icon: "document" },
+    children: [
+      { path: "index", name: "ForeignAffairsIndex", component: () => import("@/views/vab/table.vue"), meta: { title: "外事管理" } }
+    ]
+  },
+  {
+    path: "/notice",
+    component: Layout,
+    redirect: "noRedirect",
+    name: "NoticeGroup",
+    alwaysShow: true,
+    meta: { title: "通知通告", icon: "bell" },
+    children: [
+      { path: "index", name: "InfoNotice", component: () => import("@/views/vab/table.vue"), meta: { title: "通知通告" } }
+    ]
+  },
+  {
+    path: "/download",
+    component: Layout,
+    redirect: "noRedirect",
+    name: "Download",
+    alwaysShow: true,
+    meta: { title: "常用下载", icon: "download" },
+    children: [
+      { path: "index", name: "DownloadIndex", component: () => import("@/views/vab/table.vue"), meta: { title: "资源列表" } }
     ]
   },
   {

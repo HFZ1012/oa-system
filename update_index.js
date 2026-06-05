@@ -18,7 +18,7 @@ const shortcuts = ref([
   { name: '印章管理', icon: 'SuccessFilled', color: '#37bfa3', route: '/seal/apply' },
   { name: '工作安排', icon: 'Document', color: '#dc65b5', route: '/work/arrange' },
   { name: '信息发布', icon: 'Bell', color: '#3f708a', route: '/info/add' },
-  { name: '物业管理', icon: 'HomeFilled', color: '#e08c52', route: '/property/repair' },
+  { name: '物业报修', icon: 'HomeFilled', color: '#e08c52', route: '/property/repair' },
 ])
 </script>`);
 
