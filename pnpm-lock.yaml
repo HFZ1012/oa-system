@@ -112,8 +112,8 @@ importers:
         specifier: ^7.1.5
         version: 7.1.5(@rspack/core@2.2.6)(webpack@5.106.2)
       html-rspack-plugin:
-        specifier: ^6.1.9
-        version: 6.1.9(@rspack/core@2.2.6)
+        specifier: ^6.1.11
+        version: 6.1.11(@rspack/core@2.2.6)
       path-browserify:
         specifier: ^1.0.1
         version: 1.0.1
@@ -832,8 +832,8 @@ packages:
       selfsigned:
         optional: true
 
-  '@rspack/lite-tapable@1.1.0':
-    resolution: {integrity: sha512-E2B0JhYFmVAwdDiG14+DW0Di4Ze4Jg10Pc4/lILUrd5DRCaklduz2OvJ5HYQ6G+hd+WTzqQb3QnDNfK4yvAFYw==}
+  '@rspack/lite-tapable@1.2.0':
+    resolution: {integrity: sha512-Pab0fdnd2KPt4Nz4e8aLx/73dt4nRVmn/4robI0tdgOQ4ym6WsgFX6dL2L76HRpB/5yOe3CA2Ah6lSxeLRvIug==}
 
   '@sxzz/popperjs-es@2.11.8':
     resolution: {integrity: sha512-wOwESXvvED3S8xBmcPWHs2dUuzrE4XiZeFu7e1hROIJkm02a49N120pmOXxY33sBb6hArItm5W5tcg1cBtV+HQ==}
@@ -1500,11 +1500,11 @@ packages:
   hookable@5.5.3:
     resolution: {integrity: sha512-Yc+BQe8SvoXH1643Qez1zqLRmbA5rCL+sSmk6TVos0LWVfNIB7PGncdlId77WzLGSIB5KaWgTaNTs2lNVEI6VQ==}
 
-  html-rspack-plugin@6.1.9:
-    resolution: {integrity: sha512-GWdHEsyXrP4b2SSCzJfYKO/+r6DkNBeJytk2VKQwlrFuKCeCneIXpY1Cty3uYgH7jsAuPKkR1I1Cr2sOeX5KBg==}
+  html-rspack-plugin@6.1.11:
+    resolution: {integrity: sha512-aWPstu/jzOFh0BoY9eHtUp3yJp+01CdHuTxnw3RR5Uv9wAl8pAtokzaF7SWYivqZWAA2P+DYCZVmLnp23HfuGQ==}
     engines: {node: '>=16.20.2'}
     peerDependencies:
-      '@rspack/core': ^1.0.0 || ^2.0.0-0
+      '@rspack/core': ^1.0.0 || ^2.0.0
     peerDependenciesMeta:
       '@rspack/core':
         optional: true
@@ -2983,7 +2983,7 @@ snapshots:
       '@rspack/core': 2.2.6
       '@rspack/dev-middleware': 2.0.3(@rspack/core@2.2.6)
 
-  '@rspack/lite-tapable@1.1.0': {}
+  '@rspack/lite-tapable@1.2.0': {}
 
   '@sxzz/popperjs-es@2.11.8': {}
 
@@ -3680,9 +3680,9 @@ snapshots:
 
   hookable@5.5.3: {}
 
-  html-rspack-plugin@6.1.9(@rspack/core@2.2.6):
+  html-rspack-plugin@6.1.11(@rspack/core@2.2.6):
     dependencies:
-      '@rspack/lite-tapable': 1.1.0
+      '@rspack/lite-tapable': 1.2.0
     optionalDependencies:
       '@rspack/core': 2.2.6
 
