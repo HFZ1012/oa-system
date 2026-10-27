@@ -55,7 +55,7 @@
     "@babel/preset-env": "^8.0.7",
     "@rspack/cli": "^2.2.9",
     "@rspack/core": "^2.2.9",
-    "@rspack/dev-server": "^2.2.1",
+    "@rspack/dev-server": "^2.2.2",
     "@vue/compiler-sfc": "^3.5.44",
     "archiver": "^8.0.0",
     "babel-loader": "^10.1.1",
